@@ -1,0 +1,116 @@
+//codees of reacts..
+//function of code...
+
+
+//MyButton function...
+function MyButton() {
+  return (
+    <button>
+      I'm a button
+    </button>
+  );
+}
+
+
+//curly braces use for embedded properties in object ..
+//here we learn how acces objects properties using object...
+const user = {
+  name: 'Sonakshi Sinha',
+  imageUrl: 'https://i.imgur.com/yXOvdOSs.jpg',
+  imageSize: 100
+};
+
+//array && maps insted Forloops..
+const products = [
+  { title: 'Cabbage', isFruit: false, id: 1 },
+  { title: 'Garlic', isFruit: false, id: 2 },
+  { title: 'Apple', isFruit: true, id: 3 },
+];
+ //Here we used the arrow function..
+ const handleItemClick = (productId) => {
+  // Logic to handle the item click, you can access productId here
+  console.log(`Item clicked with ID: ${productId}`);
+};
+
+
+
+
+//export use for declaring main function...
+export default function App() {
+
+//all fuction and activies willbe perform here..
+//her we used map instead of for loop..
+  const listItems = products.map(product =>
+    <li
+      key={product.id}
+      style={{
+        color: product.isFruit ? 'magenta' : 'darkgreen'
+      }}
+       onClick={ () =>handleItemClick(product.id)}
+    >
+      {product.title}
+    </li>
+  );
+
+
+  return (
+    //online output return karne ka process here...
+
+    code to display button ans=d welcome to page...
+    // <div>
+    // <h1>Welcome to my app</h1>
+    // <MyButton/>
+    // </div>
+
+    code to understand single symnatic tags in react...
+    ex:in html we use break as <br> and in react <br/>
+    // <>
+    //   <h1>About</h1>
+    //   <p>Hello there.<br/>How do you do?</p>
+    // </>
+
+
+    here we learn how acces objects properties using object...
+    // <>
+    // <h1>{user.name}</h1>
+    // <img className='Avtar' src={user.imageUrl} alt={'Photo of '+user.name}
+    // style={{
+    //   width:user.imageSize,
+    //   height: user.imageSize
+    // }} />
+    // </>
+
+
+    
+    array && maps insted Forloops..
+    <ul>{listItems}</ul>
+  );
+}
+
+//for calculate count inbuilt function used...
+import { useState } from 'react';
+
+// import Navbar from './Components/Navbar';
+
+
+export default function App() {
+  //all fuction and activies willbe perform here..
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+  return (
+    //online output return karne ka process here...
+    <div>
+    <h1>Counters that update separately</h1>
+    <button onClick={handleClick}>
+      Clicked {count} times
+    </button>
+    <button onClick={handleClick}>
+      Clicked {count} times
+    </button>
+  </div>
+  
+  );
+}
